@@ -1,0 +1,32 @@
+---
+import { PlayerControllers } from "./player-controllers";
+import { PlayerActions } from "./player-actions";
+import { Track } from "@/types/track";
+
+const currentSong: Track = {
+    id: "",
+    title: "Evolve",
+    artist: "The Warning",
+    cover: "https://i.scdn.co/image/ab67616d0000b273833f4f371d38761280847992",
+    duration: 0,
+    album: "Error",
+};
+---
+
+<footer
+    class="fixed bottom-0 text-white left-0 w-full bg-black shadow-2xl py-4 px-6 flex justify-between items-center"
+>
+    <div class="flex items-center space-x-4">
+        <img
+            src={currentSong?.cover}
+            alt="Portada"
+            class="w-12 h-12 rounded-md"
+        />
+        <div>
+            <h4 class="text-sm font-bold">{currentSong?.title}</h4>
+            <p class="text-xs text-gray-400">{currentSong?.artist}</p>
+        </div>
+    </div>
+    <PlayerControllers client:load />
+    <PlayerActions client:load />
+</footer>
