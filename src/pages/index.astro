@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { PostList } from "@/components/post/post-list";
 ---
 
-<Layout />
+<Layout>
+    <PostList client:load />
+</Layout>
