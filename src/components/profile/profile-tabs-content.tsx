@@ -7,8 +7,7 @@ import { ProfileTrackList } from "./profile-track-list";
 export function ProfileTabsContent() {
   return (
     <div className="flex  justify-center">
-      <ProfileTrackList />
-      {/* <Tabs className="">
+      <Tabs className=" flex flex-col  items-center justify-center">
         <TabsList>
           <TabsTrigger className="text-lg" value="posts">
             Posts
@@ -31,7 +30,7 @@ export function ProfileTabsContent() {
           <ProfilePostList />
         </TabsContent>
         <TabsContent value="tracks">
-
+          <ProfileTrackList />
         </TabsContent>
         <TabsContent value="albums">
           <ProfileAlbumList />
@@ -39,7 +38,7 @@ export function ProfileTabsContent() {
         <TabsContent value="playlists">
           <ProfilePlaylistList />
         </TabsContent>
-      </Tabs> */}
+      </Tabs>
     </div>
   );
 }

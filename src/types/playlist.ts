@@ -9,6 +9,7 @@ export type Playlist = {
     email: string;
     avatar: string;
   };
+  cover_image: string;
   createdAt: Date;
   updatedAt: Date;
 };

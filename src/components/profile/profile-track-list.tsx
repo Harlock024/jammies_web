@@ -51,12 +51,10 @@ const tracks: Track[] = [
 
 export function ProfileTrackList() {
   return (
-    <div className="flex w-[92%] justify-center ">
-      <div className="flex flex-col w-full  justify-center items-center">
-        {tracks.map((track) => (
-          <TrackCard key={track.id} track={track} />
-        ))}
-      </div>
+    <div className="flex flex-col w-screen justify-center items-center">
+      {tracks.map((track) => (
+        <TrackCard key={track.id} track={track} />
+      ))}
     </div>
   );
 }

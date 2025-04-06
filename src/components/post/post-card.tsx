@@ -85,9 +85,9 @@ export function PostCard({ post }: { post: Post }) {
       </div>
 
       {/* Condicional para verificar el tipo de post */}
-      {post.type === "track" && post.track?.cover && (
+      {post.type === "track" && post.track?.cover_image && (
         <img
-          src={post.track.cover}
+          src={post.track.cover_image}
           alt={post.track.title}
           width={350}
           height={350}
