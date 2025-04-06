@@ -1,4 +1,4 @@
-import { Home, Search, Plus, Bell, CirclePlus } from "lucide-react";
+import { Home, Search, Plus, Bell, CirclePlus, Library } from "lucide-react";
 
 export function HeaderNav() {
   return (
@@ -17,6 +17,11 @@ export function HeaderNav() {
         <li>
           <a href="/upload">
             <CirclePlus />
+          </a>
+        </li>
+        <li>
+          <a href="/library">
+            <Library />
           </a>
         </li>
         <li>
