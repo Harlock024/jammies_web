@@ -1,0 +1,10 @@
+---
+import { ProfileBanner } from "@/components/profile/profile-data";
+import { ProfileTabsContent } from "@/components/profile/profile-tabs-content";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+    <ProfileBanner client:load />
+    <ProfileTabsContent client:load />
+</Layout>

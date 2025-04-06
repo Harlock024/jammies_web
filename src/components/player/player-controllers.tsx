@@ -14,20 +14,15 @@ export function PlayerControllers() {
   return (
     <div className="flex flex-col w-full items-center">
       <div className="flex justify-center space-x-3">
-        <Button size="icon" variant="ghost" aria-label="Previous Track">
+        <button aria-label="Previous Track">
           <ChevronFirst />
-        </Button>
-        <Button
-          size="icon"
-          variant="default"
-          aria-label="Play/Pause"
-          onClick={togglePlayPause}
-        >
+        </button>
+        <button aria-label="Play/Pause" onClick={togglePlayPause}>
           {isPaused ? <Play /> : <Pause />}
-        </Button>
-        <Button size="icon" variant="ghost" aria-label="Next Track">
+        </button>
+        <button aria-label="Next Track">
           <ChevronLast />
-        </Button>
+        </button>
       </div>
 
       <div className="w-[60%]  mt-3 px-4">

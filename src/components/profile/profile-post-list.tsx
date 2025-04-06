@@ -1,5 +1,5 @@
 import { Post } from "@/types/post";
-import { PostCard } from "@/components/post/post-card";
+import { PostCard } from "../post/post-card";
 
 const posts: Post[] = [
   {
@@ -81,13 +81,13 @@ const posts: Post[] = [
     likes: 0,
   },
 ];
-export function PostList() {
+
+export function ProfilePostList() {
   return (
-    <div className="flex w-full gap-10  justify-center items-center flex-col">
-      {posts.map((post) => (
-        <div className="py-5 ">
-          <PostCard key={post.id} post={post} />
-        </div>
+    <div>
+      <h2>Posts</h2>
+      {posts.map((post: Post) => (
+        <PostCard key={post.id} post={post} />
       ))}
     </div>
   );

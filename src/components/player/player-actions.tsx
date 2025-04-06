@@ -3,16 +3,16 @@ import { Button } from "../ui/button";
 
 export function PlayerActions() {
   return (
-    <div className="flex items-center justify-between">
-      <Button>
-        <Music4 />
-      </Button>
-      <Button>
-        <Volume2 />
-      </Button>
-      <Button>
-        <MonitorSpeaker />
-      </Button>
+    <div className="flex gap-4 items-center justify-between">
+      <button>
+        <Music4 className=" size-6" />
+      </button>
+      <button>
+        <Volume2 className="size-6" />
+      </button>
+      <button>
+        <MonitorSpeaker className="size-6" />
+      </button>
     </div>
   );
 }
