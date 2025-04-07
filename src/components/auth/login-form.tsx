@@ -12,22 +12,25 @@ import { Label } from "@/components/ui/label";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { Wind } from "lucide-react";
+import { useAuthStore } from "@/stores/useAuthStore";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const login = useAuthStore((state) => state.login);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setTimeout(() => {
+    setIsLoading(true);
+    login(email, password).then(() => {
       toast.success("logged!");
       setIsLoading(false);
       window.location.href = "/";
-    }, 2000);
+    });
   }
   return (
     <div className={cn("flex flex-col  gap-6 ", className)} {...props}>

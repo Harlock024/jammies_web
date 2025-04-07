@@ -32,13 +32,7 @@ export const useAuthStore = create<AuthState>()(
         try {
           const auth: AuthResponse | null = await signIn(username, password);
 
-          const me = await fetch("/api/auth/me", {
-            headers: { Authorization: `Bearer ${auth?.accessToken}` },
-          });
-
-          if (!me.ok) throw new Error("Failed to get user profile");
-
-          const user = await me.json();
+          const user = auth?.user;
           set({
             user,
             accessToken: auth?.accessToken,
