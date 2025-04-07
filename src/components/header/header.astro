@@ -1,5 +1,6 @@
 ---
-import { HeaderAvatar } from "./header-avatar";
+import { useAuthStore } from "@/stores/useAuthStore";
+import { HeaderUser } from "./header-user";
 import { HeaderNav } from "./header-nav";
 ---
 
@@ -7,6 +8,6 @@ import { HeaderNav } from "./header-nav";
     <div class="flex justify-between gap-52">
         <h1 class="flex w-full text-3xl">Jammies</h1>
         <HeaderNav />
-        <HeaderAvatar />
+        <HeaderUser client:load />
     </div>
 </header>

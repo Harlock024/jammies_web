@@ -1,0 +1,12 @@
+---
+import LayoutAuth from "@/layouts/Layout-auth.astro";
+import { RegisterForm } from "@/components/auth/register-form";
+---
+
+<LayoutAuth title="sign up">
+    <div class="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+        <div class="w-full max-w-sm">
+            <RegisterForm client:load />
+        </div>
+    </div>
+</LayoutAuth>

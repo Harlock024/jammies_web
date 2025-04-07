@@ -1,7 +1,10 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { AuthResponse } from "@/types/auth-response";
 
 import { User } from "@/types/user";
+
+import { signIn, signUp } from "@/services/auth-services";
 
 type AuthState = {
   user: User | null;
@@ -27,18 +30,10 @@ export const useAuthStore = create<AuthState>()(
       login: async (username: string, password: string) => {
         set({ isLoading: true });
         try {
-          const res = await fetch("/api/auth/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password }),
-          });
-
-          if (!res.ok) throw new Error("Login failed");
-
-          const { accessToken, refreshToken } = await res.json();
+          const auth: AuthResponse | null = await signIn(username, password);
 
           const me = await fetch("/api/auth/me", {
-            headers: { Authorization: `Bearer ${accessToken}` },
+            headers: { Authorization: `Bearer ${auth?.accessToken}` },
           });
 
           if (!me.ok) throw new Error("Failed to get user profile");
@@ -46,8 +41,8 @@ export const useAuthStore = create<AuthState>()(
           const user = await me.json();
           set({
             user,
-            accessToken,
-            refreshToken,
+            accessToken: auth?.accessToken,
+            refreshToken: auth?.refreshToken,
             isLoading: false,
           });
         } catch (err) {
@@ -82,20 +77,16 @@ export const useAuthStore = create<AuthState>()(
         }
       },
       register: async (username: string, email: string, password: string) => {
-        const res = await fetch("/api/auth/register", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, email, password }),
+        const auth: AuthResponse | null = await signUp(
+          username,
+          email,
+          password,
+        );
+        set({
+          user: auth?.user,
+          accessToken: auth?.accessToken,
+          refreshToken: auth?.refreshToken,
         });
-
-        if (!res.ok) {
-          throw new Error("Registro fallido");
-        }
-
-        const { user, accessToken, refreshToken } = await res.json();
-
-        set({ user, accessToken, refreshToken });
-        localStorage.setItem("refresh_token", refreshToken);
       },
     }),
     {
