@@ -5,14 +5,9 @@ export type Album = {
   title: string;
   description: string;
   artist: string;
-  // posted_by: {
-  //   id: string;
-  //   name: string;
-  //   email: string;
-  //   avatar: string;
-  // };
   cover_image: string;
-
+  is_public: boolean;
   createdAt: Date;
   updatedAt: Date;
+  release_date: Date;
 };

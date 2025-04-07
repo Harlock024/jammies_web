@@ -44,6 +44,9 @@ const posts: Post[] = [
       user_id: "1",
       cover_image:
         "https://kzmkmvl1upuwcpiajfpp.lite.vusercontent.net/placeholder.svg?height=300&width=300",
+      is_public: true,
+      plays: 0,
+      uploaded_at: new Date(),
     },
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -73,6 +76,8 @@ const posts: Post[] = [
       createdAt: new Date(),
       updatedAt: new Date(),
       description: "",
+      is_public: true,
+      release_date: new Date(),
     },
     createdAt: new Date(),
     updatedAt: new Date(),

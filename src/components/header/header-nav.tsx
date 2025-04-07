@@ -24,11 +24,11 @@ export function HeaderNav() {
             <Library />
           </a>
         </li>
-        <li>
+        {/* <li>
           <a href="/notification">
             <Bell />
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

@@ -12,4 +12,5 @@ export type Playlist = {
   cover_image: string;
   createdAt: Date;
   updatedAt: Date;
+  is_public: boolean;
 };

@@ -13,6 +13,9 @@ const tracks: Track[] = [
     duration: 180,
     genre: "Rock",
     user_id: "1",
+    is_public: true,
+    plays: 123456789,
+    uploaded_at: new Date("2023-01-01T00:00:00Z"),
   },
   {
     id: "2",
@@ -24,6 +27,9 @@ const tracks: Track[] = [
     duration: 240,
     genre: "Pop",
     user_id: "2",
+    is_public: false,
+    plays: 987654321,
+    uploaded_at: new Date("2023-01-01T00:00:00Z"),
   },
   {
     id: "3",
@@ -35,6 +41,9 @@ const tracks: Track[] = [
     duration: 180,
     genre: "Rock",
     user_id: "3",
+    is_public: true,
+    plays: 456789123,
+    uploaded_at: new Date("2023-01-01T00:00:00Z"),
   },
   {
     id: "4",
@@ -46,6 +55,9 @@ const tracks: Track[] = [
     duration: 210,
     genre: "Hip-Hop",
     user_id: "4",
+    is_public: true,
+    plays: 123456789,
+    uploaded_at: new Date("2023-01-01T00:00:00Z"),
   },
 ];
 

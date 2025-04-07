@@ -1,7 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { LibraryTabs } from "@/components/library/library-tabs";
 ---
 
 <Layout>
-    <h1 class="text-3xl">Library</h1>
+    <h1 class="text-3xl font-semibold m-10">Library</h1>
+    <LibraryTabs client:load />
 </Layout>

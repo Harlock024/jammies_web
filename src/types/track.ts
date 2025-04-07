@@ -5,6 +5,9 @@ export type Track = {
   artist: string;
   album: string;
   genre: string;
-  duration: number;
   cover_image: string;
+  duration: number;
+  uploaded_at: Date;
+  is_public: boolean;
+  plays: number;
 };
