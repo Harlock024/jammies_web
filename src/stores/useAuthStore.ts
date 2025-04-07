@@ -8,11 +8,15 @@ type AuthState = {
   accessToken: string | null;
   refreshToken: string | null;
   isLoading: boolean;
+  register: (
+    username: string,
+    email: string,
+    password: string,
+  ) => Promise<void>;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   refresh: () => Promise<void>;
 };
-
 export const useAuthStore = create<AuthState>()(
   persist(
     (set, get) => ({
@@ -76,6 +80,22 @@ export const useAuthStore = create<AuthState>()(
           console.error(error);
           get().logout();
         }
+      },
+      register: async (username: string, email: string, password: string) => {
+        const res = await fetch("/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password }),
+        });
+
+        if (!res.ok) {
+          throw new Error("Registro fallido");
+        }
+
+        const { user, accessToken, refreshToken } = await res.json();
+
+        set({ user, accessToken, refreshToken });
+        localStorage.setItem("refresh_token", refreshToken);
       },
     }),
     {
