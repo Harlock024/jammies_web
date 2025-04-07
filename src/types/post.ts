@@ -5,8 +5,7 @@ export type Post =
   | {
       type: "post";
       id: string;
-      title: string;
-      description: string;
+      content: string;
       posted_by: {
         id: string;
         name: string;
@@ -23,8 +22,7 @@ export type Post =
   | {
       type: "track";
       id: string;
-      title: string;
-      description: string;
+      content: string;
       posted_by: {
         id: string;
         name: string;
@@ -42,8 +40,7 @@ export type Post =
   | {
       type: "album";
       id: string;
-      title: string;
-      description: string;
+      content: string;
       posted_by: {
         id: string;
         name: string;

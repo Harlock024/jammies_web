@@ -75,16 +75,13 @@ export function PostCard({ post }: { post: Post }) {
         <PostHeader postedBy={post.posted_by} />
         <button className="text-sm text-gray-500">...</button>
       </header>
-
-      <div className="mt-2">
-        <h3 className="text-lg font-bold">{post.title}</h3>
+      <div className="mt-2 flex flex-col gap-2 ">
+        <p className="text-md  text-gray-700 mt-1">{post.content}</p>
         <p className="text-sm text-gray-500">
           {post.createdAt.toLocaleString()}
         </p>
-        <p className="text-sm  text-gray-700 mt-1">{post.description}</p>
       </div>
 
-      {/* Condicional para verificar el tipo de post */}
       {post.type === "track" && post.track?.cover_image && (
         <img
           src={post.track.cover_image}
@@ -94,7 +91,6 @@ export function PostCard({ post }: { post: Post }) {
           className="mt-2 rounded-lg object-cover"
         />
       )}
-
       {post.type === "album" && post.album?.cover_image && (
         <img
           src={post.album.cover_image}
@@ -104,7 +100,6 @@ export function PostCard({ post }: { post: Post }) {
           className="mt-2 rounded-lg object-cover"
         />
       )}
-
       <PostFooter
         onLike={handleLike}
         onComment={handleComment}

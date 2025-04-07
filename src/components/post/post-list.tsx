@@ -4,9 +4,8 @@ import { PostCard } from "@/components/post/post-card";
 const posts: Post[] = [
   {
     id: "1",
-    title: "Title",
+    content: "Description example",
     type: "post",
-    description: "Description",
     posted_by: {
       id: "1",
       name: "Author",
@@ -23,9 +22,8 @@ const posts: Post[] = [
   },
   {
     id: "2",
-    title: "Title",
+    content: "Track Content",
     type: "track",
-    description: "Description",
     posted_by: {
       id: "1",
       name: "Author",
@@ -44,6 +42,9 @@ const posts: Post[] = [
       user_id: "1",
       cover_image:
         "https://kzmkmvl1upuwcpiajfpp.lite.vusercontent.net/placeholder.svg?height=300&width=300",
+      is_public: true,
+      plays: 0,
+      uploaded_at: new Date(),
     },
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -53,9 +54,9 @@ const posts: Post[] = [
   },
   {
     id: "3",
-    title: "Title",
+
     type: "album",
-    description: "Description",
+    content: "post Content",
     posted_by: {
       id: "1",
       name: "Author",
@@ -73,6 +74,8 @@ const posts: Post[] = [
       createdAt: new Date(),
       updatedAt: new Date(),
       description: "",
+      is_public: true,
+      release_date: new Date(),
     },
     createdAt: new Date(),
     updatedAt: new Date(),
