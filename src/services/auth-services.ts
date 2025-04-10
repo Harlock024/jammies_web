@@ -1,7 +1,6 @@
 import { AuthResponse } from "@/types/auth-response";
 
-const API_URL = "http://localhost:8080/api";
-
+import { API_URL } from "./api_url";
 // login
 export async function signIn(
   email: string,

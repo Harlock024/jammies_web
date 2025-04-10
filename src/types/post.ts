@@ -1,5 +1,6 @@
 import { Track } from "./track";
 import { Album } from "./album";
+import { Playlist } from "./playlist";
 
 export type Post =
   | {
@@ -11,7 +12,7 @@ export type Post =
         name: string;
         username: string;
         email: string;
-        avatar: string;
+        profile_picture: string;
       };
       likes: number;
       comments: string[];
@@ -28,7 +29,7 @@ export type Post =
         name: string;
         username: string;
         email: string;
-        avatar: string;
+        profile_picture: string;
       };
       likes: number;
       comments: string[];
@@ -46,7 +47,7 @@ export type Post =
         name: string;
         username: string;
         email: string;
-        avatar: string;
+        profile_picture: string;
       };
       likes: number;
       comments: string[];
@@ -54,4 +55,22 @@ export type Post =
       createdAt: Date;
       updatedAt: Date;
       album: Album;
+    }
+  | {
+      type: "playlist";
+      id: string;
+      content: string;
+      posted_by: {
+        id: string;
+        name: string;
+        username: string;
+        email: string;
+        profile_picture: string;
+      };
+      likes: number;
+      comments: string[];
+      tags: string[];
+      createdAt: Date;
+      updatedAt: Date;
+      playlist: Playlist;
     };

@@ -4,13 +4,13 @@ import { useState } from "react";
 
 const PostHeader = ({ postedBy }: { postedBy: Post["posted_by"] }) => (
   <div className="flex items-center">
-    <img
-      src={postedBy.avatar}
-      alt={`${postedBy.username}'s avatar`}
+    {/* <img
+      src={postedBy.profile_picture}
+      alt={`${postedBy.username} avatar`}
       width={40}
       height={40}
       className="rounded-full mr-2"
-    />
+    /> */}
     <div>
       <h2 className="text-lg font-bold">{postedBy.name}</h2>
       <p className="text-sm text-gray-500">@{postedBy.username}</p>
@@ -77,9 +77,9 @@ export function PostCard({ post }: { post: Post }) {
       </header>
       <div className="mt-2 flex flex-col gap-2 ">
         <p className="text-md  text-gray-700 mt-1">{post.content}</p>
-        <p className="text-sm text-gray-500">
+        {/* <p className="text-sm text-gray-500">
           {post.createdAt.toLocaleString()}
-        </p>
+        </p> */}
       </div>
 
       {post.type === "track" && post.track?.cover_image && (
