@@ -18,7 +18,7 @@ const mockTracks: Track[] = [
 export function PostForm({ closeModal }: { closeModal: () => void }) {
   const [content, setContent] = useState("");
   const [selectedTrackId, setSelectedTrackId] = useState<string | null>(null);
-  const [showSongSelector, setShowSongSelector] = useState();
+  const [showSongSelector, setShowSongSelector] = useState(false);
   const [query, setQuery] = useState("");
 
   const handleSubmit = (event: FormEvent) => {
