@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 
 export function PostFeed() {
   const { posts, fetchPosts, isLoading, hasMore } = usePostStore();
-  const [isTogglePostModal, setTogglePostModal] = useState(true);
+  const [isTogglePostModal, setTogglePostModal] = useState(false);
   const loaderRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     fetchPosts();
